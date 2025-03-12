@@ -4,14 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'g++ -o PES2UG22CS044-1 main.cpp'  // Compile the C++ file
+                sh 'g++ -o PES2UG22CS044 main.cpp'
+                sh 'ls -l'
                 echo 'Build Stage Successful'
             }
         }
-        
+
         stage('Test') {
             steps {
-                sh './PES2UG22CS044'  // Run the compiled C++ program
+                sh 'chmod +x PES2UG22CS044'
+                sh 'ls -l'
+                sh './PES2UG22CS044'
                 echo 'Test Stage Successful'
             }
         }
@@ -19,7 +22,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deployment Successful'
-                // You can add actual deployment steps here if needed
             }
         }
     }
