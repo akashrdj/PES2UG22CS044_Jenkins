@@ -1,0 +1,89 @@
+{
+  "name": "Web Application Attack",
+  "description": "Compromise web application and steal user data",
+  "cvss_score": 9.8,
+  "severity": "Critical",
+  "attack_vector": "Network",
+  "likelihood": "High",
+  "impact": "High",
+  "children": [
+    {
+      "name": "SQL Injection",
+      "description": "Exploit SQL injection vulnerability",
+      "cvss_score": 9.8,
+      "severity": "Critical",
+      "attack_vector": "Network",
+      "likelihood": "High",
+      "impact": "High",
+      "children": [
+        {
+          "name": "Bypass Authentication",
+          "description": "Use SQL injection to bypass login",
+          "cvss_score": 9.1,
+          "severity": "Critical",
+          "attack_vector": "Network",
+          "likelihood": "Medium",
+          "impact": "High"
+        },
+        {
+          "name": "Extract Database",
+          "description": "Use UNION queries to extract data",
+          "cvss_score": 8.6,
+          "severity": "High",
+          "attack_vector": "Network",
+          "likelihood": "Medium",
+          "impact": "High"
+        }
+      ]
+    },
+    {
+      "name": "XSS Attack",
+      "description": "Cross-site scripting to steal session tokens",
+      "cvss_score": 7.1,
+      "severity": "High",
+      "attack_vector": "Network",
+      "likelihood": "High",
+      "impact": "Medium",
+      "children": [
+        {
+          "name": "Stored XSS",
+          "description": "Inject malicious script in stored data",
+          "cvss_score": 7.1,
+          "severity": "High",
+          "attack_vector": "Network",
+          "likelihood": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "name": "Reflected XSS",
+          "description": "Craft malicious URL with XSS payload",
+          "cvss_score": 6.1,
+          "severity": "Medium",
+          "attack_vector": "Network",
+          "likelihood": "Medium",
+          "impact": "Low"
+        }
+      ]
+    },
+    {
+      "name": "Brute Force Attack",
+      "description": "Attempt to guess credentials",
+      "cvss_score": 5.3,
+      "severity": "Medium",
+      "attack_vector": "Network",
+      "likelihood": "Low",
+      "impact": "High",
+      "children": [
+        {
+          "name": "Dictionary Attack",
+          "description": "Use common password list",
+          "cvss_score": 5.3,
+          "severity": "Medium",
+          "attack_vector": "Network",
+          "likelihood": "Low",
+          "impact": "Medium"
+        }
+      ]
+    }
+  ]
+}
